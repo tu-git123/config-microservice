@@ -5,6 +5,8 @@ server:
 spring:
   application:
     name: gateway         # Tên ứng dụng đăng ký trên Eureka
+  config:
+    import: "configserver:"
   cloud:
     gateway:
       routes:
