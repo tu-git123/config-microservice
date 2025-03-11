@@ -1,0 +1,12 @@
+# config-repo/service-b.yml
+server:
+  port: 8082             # Cổng chạy Service B
+
+spring:
+  application:
+    name: service-b       # Tên ứng dụng đăng ký trên Eureka
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  # URL của Eureka Server
