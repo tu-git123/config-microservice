@@ -1,0 +1,23 @@
+# config-repo/gateway.yml
+server:
+  port: 8080             # Cổng chạy Gateway
+
+spring:
+  application:
+    name: gateway         # Tên ứng dụng đăng ký trên Eureka
+  cloud:
+    gateway:
+      routes:
+        - id: service-a-route
+          uri: lb://service-a
+          predicates:
+            - Path=/service-a/**
+        - id: service-b-route
+          uri: lb://service-b
+          predicates:
+            - Path=/service-b/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  # URL của Eureka Server
