@@ -1,0 +1,12 @@
+# config-repo/service-a.yml
+server:
+  port: 8081             # Cổng chạy Service A
+
+spring:
+  application:
+    name: service-a       # Tên ứng dụng đăng ký trên Eureka
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/  # URL của Eureka Server
