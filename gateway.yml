@@ -12,10 +12,14 @@ spring:
           uri: lb://service-a
           predicates:
             - Path=/service-a/**
+          filters:
+            - StripPrefix=1         # Loại bỏ phần "/service-a" trước khi forward
         - id: service-b-route
           uri: lb://service-b
           predicates:
             - Path=/service-b/**
+          filters:
+            - StripPrefix=1         # Loại bỏ phần "/service-a" trước khi forward
 
 eureka:
   client:
